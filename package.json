@@ -1,0 +1,11 @@
+{
+  "name": "BACKEND",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/ardhisparahita/backend-praktek.git",
+  "author": "<ardhisparahitaa@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
