@@ -2,27 +2,27 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('petugas', {
+    await queryInterface.createTable('responses', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      id_petugas: {
+      id_tanggapan: {
         type: Sequelize.INTEGER
       },
-      nama_petugas: {
-        type: Sequelize.STRING
+      id_pengaduan: {
+        type: Sequelize.INTEGER
       },
-      username: {
-        type: Sequelize.STRING
+      tgl_pengaduan: {
+        type: Sequelize.DATE
       },
-      password: {
-        type: Sequelize.STRING
+      tanggapan: {
+        type: Sequelize.TEXT
       },
-      telp: {
-        type: Sequelize.STRING
+      id_petugas: {
+        type: Sequelize.INTEGER
       },
       created_at: {
         allowNull: false,
@@ -31,17 +31,10 @@ module.exports = {
       updated_at: {
         allowNull: false,
         type: Sequelize.DATE
-      },
-      level: {
-        type: DataTypes.ENUM,
-        values: [
-            'admin',
-            'petugas',
-        ]
-    },
+      }
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('petugas');
+    await queryInterface.dropTable('responses');
   }
 };

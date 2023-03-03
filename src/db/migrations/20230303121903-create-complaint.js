@@ -2,7 +2,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('pengaduans', {
+    await queryInterface.createTable('complaints', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -24,6 +24,9 @@ module.exports = {
       foto: {
         type: Sequelize.STRING
       },
+      status: {
+        type: Sequelize.ENUM('0', 'proses', 'selesai')
+      },
       created_at: {
         allowNull: false,
         type: Sequelize.DATE
@@ -31,19 +34,10 @@ module.exports = {
       updated_at: {
         allowNull: false,
         type: Sequelize.DATE
-      },
-      status: {
-        type: DataTypes.ENUM,
-        status: [
-            '0',
-            'proses',
-            'selesai',
-        ],
-        
-    }
+      }
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('pengaduans');
+    await queryInterface.dropTable('complaints');
   }
 };
