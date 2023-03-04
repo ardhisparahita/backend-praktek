@@ -3,13 +3,10 @@
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('complaints', {
-      id: {
+      id_pengaduan: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
-      },
-      id_pengaduan: {
         type: Sequelize.INTEGER
       },
       tgl_pengaduan: {
@@ -17,7 +14,11 @@ module.exports = {
       },
       nik: {
         type: Sequelize.INTEGER,
-        unique:true
+        unique:true,
+        references: {
+          model: "publics",
+          key: "nik"
+        }
       },
       isi_laporan: {
         type: Sequelize.TEXT
