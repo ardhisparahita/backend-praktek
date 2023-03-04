@@ -13,16 +13,22 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       id_pengaduan: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        unique: true,
+        references: {
+          model: "complaints",
+          key: "id_pengaduan"
+        }
       },
       tgl_pengaduan: {
         type: Sequelize.DATE
       },
-      tanggapan: {
+      tanggapana: {
         type: Sequelize.TEXT
       },
       id_petugas: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        unique: true
       },
       created_at: {
         allowNull: false,

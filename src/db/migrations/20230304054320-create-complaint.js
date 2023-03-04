@@ -16,7 +16,8 @@ module.exports = {
         type: Sequelize.DATE
       },
       nik: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        unique:true
       },
       isi_laporan: {
         type: Sequelize.TEXT

@@ -11,11 +11,11 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      response.belongsTo(models.complaint, {
+      response.belongsTo(models.complaints, {
         foreignKey: "id_pengaduan",
         as: "complaints"
       })
-      response.belongsTo(models.officer, {
+      response.belongsTo(models.officers, {
         foreignKey: "id_petugas",
         as: "officers"
       })
@@ -25,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
     id_tanggapan: DataTypes.INTEGER,
     id_pengaduan: DataTypes.INTEGER,
     tgl_pengaduan: DataTypes.DATE,
-    tanggapan: DataTypes.TEXT,
+    tanggapana: DataTypes.TEXT,
     id_petugas: DataTypes.INTEGER
   }, {
     sequelize,

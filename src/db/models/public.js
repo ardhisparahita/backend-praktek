@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
       public.hasMany(models.complaints, {
         foreignKey: "nik"
       })
-    } 
+    }
   }
   public.init({
     nik: DataTypes.INTEGER,
