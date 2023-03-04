@@ -6,7 +6,7 @@ abstract class BaseRoute implements IRouter {
 
   constructor() {
     this.router = Router()
-    this.routes
+    this.routes()
   }
 
   abstract routes(): void;
