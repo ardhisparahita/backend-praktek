@@ -29,14 +29,6 @@ module.exports = {
       status: {
         type: Sequelize.ENUM('0', 'proses', 'selesai')
       },
-      created_at: {
-        allowNull: false,
-        type: Sequelize.DATE
-      },
-      updated_at: {
-        allowNull: false,
-        type: Sequelize.DATE
-      }
     });
   },
   async down(queryInterface, Sequelize) {
